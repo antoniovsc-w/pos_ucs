@@ -141,28 +141,159 @@ Multicorpos: Instrumentação e Durabilidade}
 
 Este relatório apresenta a resolução da lista de exercícios proposta como avaliação para o módulo de análise modal e dinâmica pelo método dos elementos finitos da especialização em simulações da Universidade Caxias do Sul.
 
-O trabalho compreende três exercícios propostos, com o objetido de relacionar solução analítica, simulação por elementos finitos e interpretação física de sistemas vibratórios.
+O trabalho compreende três exercícios propostos, com o objetido de relacionar solução analítica, simulação por elementos finitos e interpretação física de sistemas vibratórios. Para a realização das simulações utilizou-se o \textit{software Ansys}.
 
-\section{Exercicio 1}
+\section{Exercício 1}
 
-\section{Exercicio 2}
+Considere o sistema discreto abaixo, composto por quatro massas ligadas por cinco molas. As 
+extremidades são fixas. Dados: m1 = m2 = m3 = m4 = 10 kg; k1 = k2 = k3 = k4 = k5 = 10.000 N/m. Despreze o amortecimento. 
 
-\section{Exercicio 3}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth, height=7cm, keepaspectratio]{sistema massa mola ex1.png}
+    \caption{Sistema massa mola do exercício 1}
+    \label{fig:sist massa mola ex1}
+\end{figure}
 
+\subsection{Questão A}
+
+Identifique os quatro graus de liberdade x1, x2, x3 e x4.
+
+\subsection{Questão B}
+
+Monte a matriz de massa global $[M]$ e a matriz de rigidez global $[K]$.
+
+\subsection{Questão C}
+
+Escreva a equação do movimento livre: $[M]{\ddot{x}} + [K]{x} = {0}$.
+
+\subsection{Questão D}
+
+Assumindo ${x(t)} = {\phi}e^{(i\omega t)}$, obtenha o problema de autovalores: $([K] - \omega^2[M]){\phi} = {0}$.
+
+\subsection{Questão E}
+
+Resolva $det([K] - \omega^2[M]) = 0$ e determine os quatro autovalores, frequências naturais em Hz e 
+autovetores.
+
+\subsection{Questão F}
+
+Modele o mesmo sistema em um software de elementos finitos usando elementos de mola e massas 
+concentradas.
+
+\subsection{Questão G}
+
+Compare as frequências analíticas e numéricas e calcule o erro percentual.
+
+\subsection{Questão H}
+
+Explique por que, em uma análise modal linear clássica sem pré-tensão, uma força externa não é 
+necessária para determinar as frequências naturais.
+
+\section{Exercício 2}
+
+Considere uma placa de aço representando um suporte estrutural fixado ao veículo, com as características e condições de contorno apresentadas na tabela \ref{tab:parametros}.
+
+\begin{table}[H]
+    \centering
+    \caption{Parâmetros geométricos, propriedades do material e condições de contorno}
+    \label{tab:parametros}
+    \begin{tabular}{l l}
+        \hline
+        \textbf{Parâmetro} & \textbf{Valor} \\ \hline \hline
+        Comprimento & 500 mm \\ 
+        Largura & 80 mm \\ 
+        Espessura & 5 mm \\ 
+        Módulo de elasticidade $E$ & 210 GPa \\ 
+        Coeficiente de Poisson $\nu$ & 0,30 \\ 
+        Densidade $\rho$ & 7850 kg/m$^3$ \\ 
+        Condição de contorno & Uma extremidade completamente engastada \\ 
+        Massa concentrada inicial & 2,0 kg na extremidade livre \\ \hline
+    \end{tabular}
+\end{table}
+
+
+
+\subsection{Etapa A}
+
+Determine as cinco primeiras frequências naturais e identifique a característica predominante das 
+respectivas formas modais.
+
+\subsection{Etapa B}
+
+Aplique na extremidade livre uma força de excitação do sistema ( seguindo os conceitos que realizados), 
+seja uma aceleração unitária. Realize uma varredura de 0 a 300 Hz e obtenha uma FRF de deslocamento 
+ou aceleração na extremidade livre. 
+
+\begin{itemize}
+    \item Identifique os principais picos da FRF e compare-os com as frequências naturais da análise modal. 
+    \item Explique por que um modo pode existir na análise modal e apresentar pico pequeno ou praticamente não aparecer em determinada FRF.
+\end{itemize}
+
+\subsection{Etapa C}
+
+Remova a massa concentrada de 2,0 kg, mantendo geometria, material, malha e condições de contorno. 
+Repita a análise modal e a FRF.
+
+\subsubsection{Questão A}
+
+A retirada da massa aumentou ou diminuiu as frequências naturais? Justifique com $f_n \propto \sqrt{\frac{k}{m}}$. 
+
+\subsubsection{Questão B}
+
+Todos os modos sofreram a mesma alteração percentual? Explique considerando a posição da massa e a forma modal. 
+
+\subsubsection{Questão C}
+
+Os picos da FRF acompanharam a alteração das frequências modais?
+
+\subsubsection{Questão D}
+
+A retirada de massa necessariamente melhora o comportamento dinâmico? Justifique.
+
+
+\section{Exercício 3}
+
+Um componente estrutural fixado à carroceria apresenta frequência natural de 48 Hz. O motor opera entre 
+1.800 e 3.600 rpm. Considere inicialmente a excitação de 1ª ordem (1X). 
+
+\subsection{Questão A}
+
+Converta a faixa de rotação de rpm para Hz usando $f = rpm/60$. 
+
+\subsection{Questão B}
+
+Determine se a frequência natural de 48 Hz está dentro ou próxima da faixa de excitação 1X. 
+
+\subsection{Questão C}
+
+Determine a rotação para a qual $fexc~=~fn$. 
+
+\subsection{Questão D}
+
+Explique fisicamente o que pode ocorrer quando $fexc~\approx~fn$ e relacione com ressonância. 
+
+\subsection{Questão E}
+
+Discuta possíveis consequências: amplificação de deslocamentos, tensões dinâmicas, ruído, 
+desconforto, afrouxamento de uniões, fadiga e falha. 
+
+\subsection{Questão F}
+
+Proponha pelo menos quatro modificações de projeto capazes de afastar o sistema da condição crítica. 
+
+\subsection{Questão G}
+
+Repita a avaliação considerando ordens 1X, 2X e 3X, usando $fexc~=~n\cdot~rpm/60$. 
+
+\subsection{Questão H}
+
+Explique por que conhecer apenas a frequência natural não é suficiente para afirmar que haverá um 
+problema de vibração.
 
 \section{Conclusão}
 
-O presente trabalho permitiu aplicar os conceitos fundamentais do Método dos Elementos Finitos à análise estrutural de um pórtico hiperestático, por meio da comparação entre uma solução analítica, obtida pelo método das forças, e uma solução numérica desenvolvida no ANSYS Mechanical. A utilização de elementos de casca possibilitou representar a geometria dos perfis metálicos e avaliar a distribuição de deslocamentos e tensões na estrutura, além de investigar a influência da qualidade e do grau do refinamento da malha sobre os resultados obtidos.
-
-A comparação entre as reações de apoio calculadas analiticamente e aquelas obtidas numericamente demonstrou diferenças percentuais entre 1,63~\% e 16,68~\%, sendo a maior discrepância observada na reação horizontal do apoio esquerdo. Essas diferenças podem estar relacionadas às simplificações adotadas na formulação analítica, especialmente à desconsideração das deformações associadas aos esforços normais e cortantes.
-
-O estudo de convergência de malha, realizado com tamanhos de elementos entre 50 e 10 mm, demonstrou a estabilização das reações de apoio, com diferenças inferiores a 0,02~\% entre as malhas de 20 e 10 mm. Os deslocamentos globais também apresentaram tendência de convergência, com diferença de 0,89~\% para o deslocamento máximo entre os dois últimos refinamentos. Para a malha mais refinada, o deslocamento máximo foi de 15,65 mm, correspondente a aproximadamente 0,39~\% do vão de 4 m.
-
-Por outro lado, as tensões máximas apresentaram comportamento distinto, aumentando progressivamente com o refinamento da malha. A tensão equivalente máxima de von Mises passou de 551,33 MPa para 1240,2 MPa, enquanto os valores médios globais permaneceram relativamente estáveis. A análise da distribuição espacial das tensões evidenciou concentrações localizadas nas regiões de ligação entre a viga e o pilar direito, comportamento compatível com a presença de singularidades de tensão associadas à idealização geométrica dessa conexão. Deste modo, os valores máximos locais foram mantidos nos resultados, mas sua utilização direta para a verificação da resistência estrutural requer uma investigação adicional.
-
-Conclui-se que a discretização adotada foi suficiente para demonstrar a convergência das reações de apoio e a tendência de estabilização dos deslocamentos globais e da média da tensão equivalente de von-Mises. Também é possível concluir que a estrutura proposta cumpre com o critério estabelecido no objetivo do presente trabalho, uma vez que a distribuição de tensão apresenta majoritariamente, com exceção da singularidade, valores inferiores a tensão limite de escoamento.
-
-Por fim, a análise desenvolvida contribuiu para a compreensão das etapas de preparação geométrica, definição das condições de contorno, geração e avaliação da qualidade da malha e interpretação dos resultados obtidos pelo Método dos Elementos Finitos. 
+-ESCREVER
 
 \printbibliography[heading=bibintoc,title={Referências}]
 

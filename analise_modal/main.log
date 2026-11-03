@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.19)  3 NOV 2026 11:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.10.19)  3 NOV 2026 11:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1382,7 +1382,7 @@ Package hyperref Info: Link coloring ON on input line 91.
 \openout8 = `main.out'.
 
 Package babel Info: Main language set to 'portuges'.
-<logo_ucs.png, id=26, 330.23375pt x 609.27625pt>
+<logo_ucs.png, id=118, 330.23375pt x 609.27625pt>
 File: logo_ucs.png Graphic file (type png)
 <use logo_ucs.png>
 Package pdftex.def Info: logo_ucs.png  used on input line 101.
@@ -1403,47 +1403,69 @@ been already used, duplicate ignored
                    \relax 
 l.135 \newpage
                [1]
+<sistema massa mola ex1.png, id=162, 486.31688pt x 104.64093pt>
+File: sistema massa mola ex1.png Graphic file (type png)
+<use sistema massa mola ex1.png>
+Package pdftex.def Info: sistema massa mola ex1.png  used on input line 153.
+(pdftex.def)             Requested size: 389.99644pt x 83.91562pt.
+
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162 
-       [1]
+l.174 \subsection
+                 {Quest√£o E} [1 <./sistema massa mola ex1.png>] [2] [3]
+[4]
+Overfull \hbox (32.68248pt too wide) in paragraph at lines 287--288
+[]\T1/cmr/m/n/12 Repita a ava-li-a-Á„o con-si-de-rando or-dens 1X, 2X e 3X, usa
+ndo $\OML/cmm/m/it/12 fexc  \OT1/cmr/m/n/12 =  \OML/cmm/m/it/12 n \OMS/cmsy/m/n
+/12 ^^A  \OML/cmm/m/it/12 rpm=\OT1/cmr/m/n/12 60$\T1/cmr/m/n/12 . 
+ []
 
-LaTeX Warning: Empty bibliography on input line 167.
+
+LaTeX Warning: Empty bibliography on input line 298.
 
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[2] (main.aux)
+[5] (main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E287D83386B7DB4DF4079CA2E03B4E1D;493.
+(rerunfilecheck)             Checksum: 8EB8C37F00D5C4405571A2B8D233C240;3006.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46088 strings out of 467392
- 953650 string characters out of 5415723
- 1814252 words of memory out of 5000000
- 74845 multiletter control sequences out of 15000+600000
- 635762 words of font info for 57 fonts, out of 8000000 for 9000
+ 46171 strings out of 467392
+ 955102 string characters out of 5415723
+ 1816421 words of memory out of 5000000
+ 74896 multiletter control sequences out of 15000+600000
+ 638326 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,6n,131p,2489b,1667s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 107i,8n,131p,2489b,1667s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Administrador\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
-600\ecbx1200.pk> <C:\Users\Administrador\AppData\Local\MiKTeX\fonts/pk/ljfour/j
-knappen/ec/dpi600\ecbx1728.pk> <C:\Users\Administrador\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Administrador\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk>
-Output written on main.pdf (4 pages, 81516 bytes).
+600\tcrm1200.pk> <C:\Users\Administrador\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecbx1440.pk> <C:\Users\Administrador\AppData\Local\MiKTeX\fon
+ts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Administrador\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Administra
+dor\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Us
+ers\Administrador\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+200.pk> <C:\Users\Administrador\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
+c/dpi600\ecbx2074.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+ex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
+/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program File
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (7 pages, 210613 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 58 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 462 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
+ 247 words of extra memory for PDF output out of 10000 (max. 10000000)
 
