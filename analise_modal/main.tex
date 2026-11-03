@@ -1,0 +1,171 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{refs.bib}
+%\bibliography{refs}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{amsmath,empheq}
+\usepackage{systeme,mathtools}
+\usepackage{amsmath}
+\usepackage{graphicx,subcaption} 
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{array}     % Melhor controle de tabelas
+\usepackage{tabularx}  % Tabelas com largura ajustável
+\usepackage{amsmath}
+% parte para escrever em python
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\usepackage[version=4]{mhchem}
+\usepackage[acronym]{glossaries} % habilita glossário de siglas
+\makeglossaries
+\usepackage{xcolor}
+\usepackage{setspace}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    %literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1
+    literate={é}{{\'{e}}}1 {è}{{\`{e}}}1 {ê}{{\^{e}}}1 {ë}{{\¨{e}}}1 {É}{{\'{E}}}1 {Ê}{{\^{E}}}1 {û}{{\^{u}}}1 {ù}{{\`{u}}}1 {â}{{\^{a}}}1 {à}{{\`{a}}}1 {á}{{\'{a}}}1 {ã}{{\~{a}}}1 {Á}{{\'{A}}}1 {Â}{{\^{A}}}1 {Ã}{{\~{A}}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {õ}{{\~{o}}}1 {ó}{{\'{o}}}1 {ô}{{\^{o}}}1 {Õ}{{\~{O}}}1 {Ó}{{\'{O}}}1 {Ô}{{\^{O}}}1 {î}{{\^{i}}}1 {Î}{{\^{I}}}1 {í}{{\'{i}}}1 {Í}{{\~{Í}}}1 {°}{\textdegree}1, 
+}
+ 
+\lstset{style=mystyle}
+
+
+% Note that the sign must be
+%  µ
+%  MICRO SIGN
+%  Unicode: U+00B5, UTF-8: C2 B5
+% and \emph{not}
+%  μ
+%  GREEK SMALL LETTER MU
+%  Unicode: U+03BC, UTF-8: CE BC
+\sisetup{math-micro=\text{µ},text-micro=µ}
+
+%title{Experiência 3: Máquinas Síncronas}
+
+%author{Caio Rosa \\ João Antônio do Amarante \\ Rodrigo \\ Thuane}
+
+%\date{\today}
+\setlength {\marginparwidth }{2cm}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+\begin{document}
+%\maketitle
+
+\begin{titlepage}
+	\begin{center}
+%		\huge{Universidade de Caxias do Sul}
+
+\vspace{10pt}
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=3.5cm]{logo_ucs.png}
+\end{figure}
+        
+        \vspace{45pt}
+        
+		\textbf{{\LARGE
+                \begin{spacing}{1.2}
+            \textbf{Relatório para o módulo de Análise Modal e Dinâmica pelo Método dos Elementos Finitos da Especialização em Simulações Estruturais, Fluidodinâmicas e 
+Multicorpos: Instrumentação e Durabilidade}
+            \end{spacing}}}
+		\vspace{70pt}
+		
+	\end{center}
+	
+	\begin{flushleft}
+		\begin{tabbing}
+			Aluno:\qquad\qquad\= Antonio Victor de Souza Correa \\
+			Professor:\> Carlos Aurélio da Silva Carvalho\\
+			
+		
+	\end{tabbing}
+		  
+	\end{flushleft}
+	
+	\begin{center}
+		\vspace{\fill}
+		Rio de Janeiro, Novembro de 2026
+	\end{center}
+\end{titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+
+\newpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introdução}
+
+Este relatório apresenta a resolução da lista de exercícios proposta como avaliação para o módulo de análise modal e dinâmica pelo método dos elementos finitos da especialização em simulações da Universidade Caxias do Sul.
+
+O trabalho compreende três exercícios propostos, com o objetido de relacionar solução analítica, simulação por elementos finitos e interpretação física de sistemas vibratórios.
+
+\section{Exercicio 1}
+
+\section{Exercicio 2}
+
+\section{Exercicio 3}
+
+
+\section{Conclusão}
+
+O presente trabalho permitiu aplicar os conceitos fundamentais do Método dos Elementos Finitos à análise estrutural de um pórtico hiperestático, por meio da comparação entre uma solução analítica, obtida pelo método das forças, e uma solução numérica desenvolvida no ANSYS Mechanical. A utilização de elementos de casca possibilitou representar a geometria dos perfis metálicos e avaliar a distribuição de deslocamentos e tensões na estrutura, além de investigar a influência da qualidade e do grau do refinamento da malha sobre os resultados obtidos.
+
+A comparação entre as reações de apoio calculadas analiticamente e aquelas obtidas numericamente demonstrou diferenças percentuais entre 1,63~\% e 16,68~\%, sendo a maior discrepância observada na reação horizontal do apoio esquerdo. Essas diferenças podem estar relacionadas às simplificações adotadas na formulação analítica, especialmente à desconsideração das deformações associadas aos esforços normais e cortantes.
+
+O estudo de convergência de malha, realizado com tamanhos de elementos entre 50 e 10 mm, demonstrou a estabilização das reações de apoio, com diferenças inferiores a 0,02~\% entre as malhas de 20 e 10 mm. Os deslocamentos globais também apresentaram tendência de convergência, com diferença de 0,89~\% para o deslocamento máximo entre os dois últimos refinamentos. Para a malha mais refinada, o deslocamento máximo foi de 15,65 mm, correspondente a aproximadamente 0,39~\% do vão de 4 m.
+
+Por outro lado, as tensões máximas apresentaram comportamento distinto, aumentando progressivamente com o refinamento da malha. A tensão equivalente máxima de von Mises passou de 551,33 MPa para 1240,2 MPa, enquanto os valores médios globais permaneceram relativamente estáveis. A análise da distribuição espacial das tensões evidenciou concentrações localizadas nas regiões de ligação entre a viga e o pilar direito, comportamento compatível com a presença de singularidades de tensão associadas à idealização geométrica dessa conexão. Deste modo, os valores máximos locais foram mantidos nos resultados, mas sua utilização direta para a verificação da resistência estrutural requer uma investigação adicional.
+
+Conclui-se que a discretização adotada foi suficiente para demonstrar a convergência das reações de apoio e a tendência de estabilização dos deslocamentos globais e da média da tensão equivalente de von-Mises. Também é possível concluir que a estrutura proposta cumpre com o critério estabelecido no objetivo do presente trabalho, uma vez que a distribuição de tensão apresenta majoritariamente, com exceção da singularidade, valores inferiores a tensão limite de escoamento.
+
+Por fim, a análise desenvolvida contribuiu para a compreensão das etapas de preparação geométrica, definição das condições de contorno, geração e avaliação da qualidade da malha e interpretação dos resultados obtidos pelo Método dos Elementos Finitos. 
+
+\printbibliography[heading=bibintoc,title={Referências}]
+
+
+
+\end{document}
