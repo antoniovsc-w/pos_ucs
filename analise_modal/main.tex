@@ -157,42 +157,324 @@ extremidades são fixas. Dados: m1 = m2 = m3 = m4 = 10 kg; k1 = k2 = k3 = k4 = k
 
 \subsection{Questão A}
 
-Identifique os quatro graus de liberdade x1, x2, x3 e x4.
+\textbf{Identifique os quatro graus de liberdade x1, x2, x3 e x4}.
+
+Os quatro graus de liberdade representam os deslocamentos horizontais independentes de cada massa $m_1, m_2, m_3$ e $m_4$, onde cada uma pode se deslocar para esquerda ou para a direita.
 
 \subsection{Questão B}
 
-Monte a matriz de massa global $[M]$ e a matriz de rigidez global $[K]$.
+\textbf{Monte a matriz de massa global $[M]$ e a matriz de rigidez global $[K]$.}
+
+A matriz de massa global é diagonal:
+
+\begin{equation}
+[M] =
+\begin{bmatrix}
+10 & 0 & 0 & 0 \\
+0 & 10 & 0 & 0 \\
+0 & 0 & 10 & 0 \\
+0 & 0 & 0 & 10
+\end{bmatrix}
+\ \mathrm{kg}
+\label{eq:matriz_massa}
+\end{equation}
+
+A matriz de rigidez global é montada com base no acoplamento elástico entre as massas adjacentes:
+
+\begin{equation}
+[K] =
+\begin{bmatrix}
+k_1 + k_2 & -k_2 & 0 & 0 \\
+-k_2 & k_2 + k_3 & -k_3 & 0 \\
+0 & -k_3 & k_3 + k_4 & -k_4 \\
+0 & 0 & -k_4 & k_4 + k_5
+\end{bmatrix}
+=
+\begin{bmatrix}
+20.000 & -10.000 & 0 & 0 \\
+-10.000 & 20.000 & -10.000 & 0 \\
+0 & -10.000 & 20.000 & -10.000 \\
+0 & 0 & -10.000 & 20.000
+\end{bmatrix}
+\label{eq:matriz_rigidez}
+\end{equation}
 
 \subsection{Questão C}
 
-Escreva a equação do movimento livre: $[M]{\ddot{x}} + [K]{x} = {0}$.
+\textbf{Escreva a equação do movimento livre: $[M]{\ddot{x}} + [K]{x} = {0}$.}
+
+Em forma matricial, a equação de movimento para vibração livre não amortecida é dada por
+
+\begin{equation}
+[M]\{\ddot{x}\} + [K]\{x\} = \{0\}
+\label{eq:equacao_movimento}
+\end{equation}
+
+substituindo as matrizes de rigidez e massa:
+
+\begin{equation}
+\begin{bmatrix}
+10 & 0 & 0 & 0\\
+0 & 10 & 0 & 0\\
+0 & 0 & 10 & 0\\
+0 & 0 & 0 & 10
+\end{bmatrix}
+\begin{Bmatrix}
+\ddot{x}_1\\
+\ddot{x}_2\\
+\ddot{x}_3\\
+\ddot{x}_4
+\end{Bmatrix}
++
+\begin{bmatrix}
+20000 & -10000 & 0 & 0\\
+-10000 & 20000 & -10000 & 0\\
+0 & -10000 & 20000 & -10000\\
+0 & 0 & -10000 & 20000
+\end{bmatrix}
+\begin{Bmatrix}
+x_1\\
+x_2\\
+x_3\\
+x_4
+\end{Bmatrix}
+=
+\begin{Bmatrix}
+0\\
+0\\
+0\\
+0
+\end{Bmatrix}
+\label{eq:movimento_livre}
+\end{equation}
 
 \subsection{Questão D}
 
-Assumindo ${x(t)} = {\phi}e^{(i\omega t)}$, obtenha o problema de autovalores: $([K] - \omega^2[M]){\phi} = {0}$.
+\textbf{Assumindo ${x(t)} = {\phi}e^{(i\omega t)}$, obtenha o problema de autovalores: $([K] - \omega^2[M]){\phi} = {0}$.}
+
+Tomando a solução harmônica ${x(t)} = {\phi}e^{(i\omega t)}$ e derivando duas vezes em relação ao tempo para substituir na equação do movimento livre, temos:
+
+\begin{equation}
+\{\ddot{x}(t)\} = -\omega^2 \{\phi\} e^{i\omega t}
+\label{eq:aceleracao_harmonica}
+\end{equation}
+
+Substituindo na equação do movimento:
+
+\begin{equation}
+-\omega^2 [M]\{\phi\} e^{i\omega t}
++ [K]\{\phi\} e^{i\omega t} = \{0\}
+\label{eq:substituicao_movimento}
+\end{equation}
+
+Colocando o exponencial em evidência:
+
+\begin{equation}
+\left([K] - \omega^2[M]\right)
+\{\phi\} e^{i\omega t} = \{0\}
+\label{eq:fatoracao_movimento}
+\end{equation}
+
+Como $e^{i\omega t} \neq 0$, temos:
+
+\begin{equation}
+\left([K] - \omega^2[M]\right)\{\phi\} = \{0\}
+\label{eq:problema_autovalores}
+\end{equation}
+
 
 \subsection{Questão E}
 
-Resolva $det([K] - \omega^2[M]) = 0$ e determine os quatro autovalores, frequências naturais em Hz e 
-autovetores.
+\textbf{Resolva $det([K] - \omega^2[M]) = 0$ e determine os quatro autovalores, frequências naturais em Hz e 
+autovetores.}
+
+\begin{equation}
+    \det\left([K] - \omega^2[M]\right) = 0
+\end{equation}
+
+Substituindo as matrizes:
+
+\begin{equation}
+\begin{vmatrix}
+20000 - 10\omega^2 & -10000 & 0 & 0 \\
+-10000 & 20000 - 10\omega^2 & -10000 & 0 \\
+0 & -10000 & 20000 - 10\omega^2 & -10000 \\
+0 & 0 & -10000 & 20000 - 10\omega^2
+\end{vmatrix}
+= 0
+\end{equation}
+
+Dividindo todos os termos por 10 e substituindo $\omega^2$ por $\lambda$:
+
+\begin{equation}
+\begin{vmatrix}
+2000 - \lambda & -1000 & 0 & 0 \\
+-1000 & 2000 - \lambda & -1000 & 0 \\
+0 & -1000 & 2000 - \lambda & -1000 \\
+0 & 0 & -1000 & 2000 - \lambda
+\end{vmatrix}
+= 0
+\end{equation}
+
+Resolvendo o determinantes encontramos o polinômio:
+
+\begin{equation}
+\lambda^4 - 8000\lambda^3
++ 21\,000\,000\lambda^2
+- 20\,000\,000\,000\lambda
++ 5\,000\,000\,000\,000 = 0
+\end{equation}
+
+Resolvendo o polinômio encontramos os autovalores e em seguida as frequências naturais:
+
+
+\begin{equation}
+\begin{aligned}
+\lambda_1 &= 381{,}96 \rightarrow 19,54 rad/s \rightarrow 3,11 Hz\\
+\lambda_2 &= 1381{,}96 \rightarrow 37,17 rad/s \rightarrow 5,92 Hz\\
+\lambda_3 &= 2618{,}03 \rightarrow 51,16 rad/s \rightarrow 8,14 Hz\\
+\lambda_4 &= 3618{,}03 \rightarrow 60,15 rad/s \rightarrow 9,57 Hz
+\end{aligned}
+\end{equation}
+
+Substituindo os autovalores no problema de autovalores e autovetor \ref{eq:problema_autovalores}:
+
+\begin{equation}
+    \left([K] - \lambda_r[M]\right)\{\phi_r\} = \{0\}
+\end{equation}
+
+Substituindo as matrizes
+
+\begin{equation}
+\begin{bmatrix}
+2000-\lambda_i & -1000 & 0 & 0\\
+-1000 & 2000-\lambda_i & -1000 & 0\\
+0 & -1000 & 2000-\lambda_i & -1000\\
+0 & 0 & -1000 & 2000-\lambda_i
+\end{bmatrix}
+\begin{Bmatrix}
+\phi_{1,i}\\
+\phi_{2,i}\\
+\phi_{3,i}\\
+\phi_{4,i}
+\end{Bmatrix}
+=
+\begin{Bmatrix}
+0\\
+0\\
+0\\
+0
+\end{Bmatrix}
+\label{eq:resolvendo autovetores}
+\end{equation}
+
+Resolvendo para o primeiro autovalor e adotando $\phi_{1,1} = 1$, temos o primeiro autovetor:
+
+\begin{equation}
+\{\phi_1\} =
+\begin{Bmatrix}
+1 \\
+1{,}618 \\
+1{,}618 \\
+1
+\end{Bmatrix}
+\end{equation}
+
+Do mesmo modo, para os demais autovetores:
+
+\begin{equation}
+\{\phi_2\} =
+\begin{Bmatrix}
+1 \\
+0{,}618 \\
+-0{,}618 \\
+-1
+\end{Bmatrix}
+\end{equation}
+
+\begin{equation}
+\{\phi_3\} =
+\begin{Bmatrix}
+1 \\
+-0{,}618 \\
+-0{,}618 \\
+1
+\end{Bmatrix}
+\end{equation}
+
+\begin{equation}
+\{\phi_4\} =
+\begin{Bmatrix}
+1 \\
+-1{,}618 \\
+1{,}618 \\
+-1
+\end{Bmatrix}
+\end{equation}
+
+Ortonormalizando os autovetores em relação a massa através da equação \ref{eq: ortonormal}, temos:
+
+\begin{equation}
+\{\Phi_i\} =
+\frac{\{\phi_i\}}
+{\sqrt{\{\phi_i\}^{T}[M]\{\phi_i\}}}
+\label{eq: ortonormal}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\{\Phi_1\} &=
+\begin{Bmatrix}
+0{,}11756 \\
+0{,}19021 \\
+0{,}19021 \\
+0{,}11756
+\end{Bmatrix}
+\qquad
+\{\Phi_2\} =
+\begin{Bmatrix}
+0{,}19021 \\
+0{,}11756 \\
+-0{,}11756 \\
+-0{,}19021
+\end{Bmatrix}
+\\[1em]
+\{\Phi_3\} &=
+\begin{Bmatrix}
+0{,}19021 \\
+-0{,}11756 \\
+-0{,}11756 \\
+0{,}19021
+\end{Bmatrix}
+\qquad
+\{\Phi_4\} =
+\begin{Bmatrix}
+0{,}11756 \\
+-0{,}19021 \\
+0{,}19021 \\
+-0{,}11756
+\end{Bmatrix}
+\end{aligned}
+\end{equation}
+
 
 \subsection{Questão F}
 
-Modele o mesmo sistema em um software de elementos finitos usando elementos de mola e massas 
-concentradas.
+\textbf{Modele o mesmo sistema em um software de elementos finitos usando elementos de mola e massas 
+concentradas.}
 
 \subsection{Questão G}
 
-Compare as frequências analíticas e numéricas e calcule o erro percentual.
+\textbf{Compare as frequências analíticas e numéricas e calcule o erro percentual.}
 
 \subsection{Questão H}
 
-Explique por que, em uma análise modal linear clássica sem pré-tensão, uma força externa não é 
-necessária para determinar as frequências naturais.
+\textbf{Explique por que, em uma análise modal linear clássica sem pré-tensão, uma força externa não é 
+necessária para determinar as frequências naturais.}
 
 \section{Exercício 2}
 
-Considere uma placa de aço representando um suporte estrutural fixado ao veículo, com as características e condições de contorno apresentadas na tabela \ref{tab:parametros}.
+\textbf{Considere uma placa de aço representando um suporte estrutural fixado ao veículo, com as características e condições de contorno apresentadas na tabela \ref{tab:parametros}.}
 
 \begin{table}[H]
     \centering
@@ -216,80 +498,80 @@ Considere uma placa de aço representando um suporte estrutural fixado ao veícu
 
 \subsection{Etapa A}
 
-Determine as cinco primeiras frequências naturais e identifique a característica predominante das 
-respectivas formas modais.
+\textbf{Determine as cinco primeiras frequências naturais e identifique a característica predominante das 
+respectivas formas modais.}
 
 \subsection{Etapa B}
 
-Aplique na extremidade livre uma força de excitação do sistema ( seguindo os conceitos que realizados), 
+\textbf{Aplique na extremidade livre uma força de excitação do sistema ( seguindo os conceitos que realizados), 
 seja uma aceleração unitária. Realize uma varredura de 0 a 300 Hz e obtenha uma FRF de deslocamento 
-ou aceleração na extremidade livre. 
+ou aceleração na extremidade livre.} 
 
 \begin{itemize}
-    \item Identifique os principais picos da FRF e compare-os com as frequências naturais da análise modal. 
-    \item Explique por que um modo pode existir na análise modal e apresentar pico pequeno ou praticamente não aparecer em determinada FRF.
+    \item \textbf{Identifique os principais picos da FRF e compare-os com as frequências naturais da análise modal.} 
+    \item \textbf{Explique por que um modo pode existir na análise modal e apresentar pico pequeno ou praticamente não aparecer em determinada FRF.}
 \end{itemize}
 
 \subsection{Etapa C}
 
-Remova a massa concentrada de 2,0 kg, mantendo geometria, material, malha e condições de contorno. 
-Repita a análise modal e a FRF.
+\textbf{Remova a massa concentrada de 2,0 kg, mantendo geometria, material, malha e condições de contorno. 
+Repita a análise modal e a FRF.}
 
 \subsubsection{Questão A}
 
-A retirada da massa aumentou ou diminuiu as frequências naturais? Justifique com $f_n \propto \sqrt{\frac{k}{m}}$. 
+\textbf{A retirada da massa aumentou ou diminuiu as frequências naturais? Justifique com $f_n \propto \sqrt{\frac{k}{m}}$.} 
 
 \subsubsection{Questão B}
 
-Todos os modos sofreram a mesma alteração percentual? Explique considerando a posição da massa e a forma modal. 
+\textbf{Todos os modos sofreram a mesma alteração percentual? Explique considerando a posição da massa e a forma modal.} 
 
 \subsubsection{Questão C}
 
-Os picos da FRF acompanharam a alteração das frequências modais?
+\textbf{Os picos da FRF acompanharam a alteração das frequências modais?}
 
 \subsubsection{Questão D}
 
-A retirada de massa necessariamente melhora o comportamento dinâmico? Justifique.
+\textbf{A retirada de massa necessariamente melhora o comportamento dinâmico? Justifique.}
 
 
 \section{Exercício 3}
 
-Um componente estrutural fixado à carroceria apresenta frequência natural de 48 Hz. O motor opera entre 
-1.800 e 3.600 rpm. Considere inicialmente a excitação de 1ª ordem (1X). 
+\textbf{Um componente estrutural fixado à carroceria apresenta frequência natural de 48 Hz. O motor opera entre 
+1.800 e 3.600 rpm. Considere inicialmente a excitação de 1ª ordem (1X).} 
 
 \subsection{Questão A}
 
-Converta a faixa de rotação de rpm para Hz usando $f = rpm/60$. 
+\textbf{Converta a faixa de rotação de rpm para Hz usando $f = rpm/60$.} 
 
 \subsection{Questão B}
 
-Determine se a frequência natural de 48 Hz está dentro ou próxima da faixa de excitação 1X. 
+\textbf{Determine se a frequência natural de 48 Hz está dentro ou próxima da faixa de excitação 1X.} 
 
 \subsection{Questão C}
 
-Determine a rotação para a qual $fexc~=~fn$. 
+\textbf{Determine a rotação para a qual $fexc~=~fn$.}
 
 \subsection{Questão D}
 
-Explique fisicamente o que pode ocorrer quando $fexc~\approx~fn$ e relacione com ressonância. 
+\textbf{Explique fisicamente o que pode ocorrer quando $fexc~\approx~fn$ e relacione com ressonância.} 
 
 \subsection{Questão E}
 
-Discuta possíveis consequências: amplificação de deslocamentos, tensões dinâmicas, ruído, 
-desconforto, afrouxamento de uniões, fadiga e falha. 
+\textbf{Discuta possíveis consequências: amplificação de deslocamentos, tensões dinâmicas, ruído, 
+desconforto, afrouxamento de uniões, fadiga e falha.} 
 
 \subsection{Questão F}
 
-Proponha pelo menos quatro modificações de projeto capazes de afastar o sistema da condição crítica. 
+\textbf{Proponha pelo menos quatro modificações de projeto capazes de afastar o sistema da condição crítica.} 
 
 \subsection{Questão G}
 
-Repita a avaliação considerando ordens 1X, 2X e 3X, usando $fexc~=~n\cdot~rpm/60$. 
+\textbf{Repita a avaliação considerando ordens 1X, 2X e 3X, usando $fexc~=~n\cdot~rpm/60$.} 
 
 \subsection{Questão H}
 
-Explique por que conhecer apenas a frequência natural não é suficiente para afirmar que haverá um 
-problema de vibração.
+\textbf{Explique por que conhecer apenas a frequência natural não é suficiente para afirmar que haverá um 
+problema de vibração.}
 
 \section{Conclusão}
 
